@@ -3,13 +3,21 @@
 echo "Setting git aliases..."
 #read -p "Continue? Will overwrite any conflicting aliases... [yN]" yn
 
+echo -e "\nCurrent git global email: "
+git config --global user.email
 read -p "What's your email for git?  " email
-git config --global user.email "$email"
+if [[ $email != "" ]]; then
+    git config --global user.email "$email"
+fi
 
+echo -e "\nCurrent git global name: "
+git config --global user.name
 read -p "What's your name for git?  " name
-git config --global user.name "$name"
+if [[ $name != "" ]]; then
+    git config --global user.name "$name"
+fi
 
-echo "git s ==> Status"
+echo -e "\ngit s ==> Status"
 git config --global --unset-all alias.s
 git config --global alias.s status
 
@@ -25,6 +33,10 @@ echo "git co ==> Checkout"
 git config --global --unset-all alias.co
 git config --global alias.co checkout
 
+echo "git d ==> Diff"
+git config --global --unset-all alias.d
+git config --global alias.d diff
+
 echo "git f ==> Fetch"
 git config --global --unset-all alias.f
 git config --global alias.f fetch
@@ -33,4 +45,4 @@ echo "git lol ==> Better log"
 git config --global --unset-all alias.lol
 git config --global alias.lol "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short --all"
 
-echo "All done."
+echo -e "\nAll done."
