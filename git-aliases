@@ -17,6 +17,9 @@ if [[ $name != "" ]]; then
     git config --global user.name "$name"
 fi
 
+echo -e "\nTell git pull to automatically merge from the current branch"
+git config --global branch.autosetupmerge true
+
 echo -e "\ngit s ==> Status"
 git config --global --unset-all alias.s
 git config --global alias.s status
