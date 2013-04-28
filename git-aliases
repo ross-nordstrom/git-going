@@ -53,6 +53,6 @@ git config --global alias.f fetch
 
 echo "git lol ==> Better log"
 git config --global --unset-all alias.lol
-git config --global alias.lol "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short --all"
+git config --global alias.lol "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short --all -10"
 
 echo -e "\nAll done."
