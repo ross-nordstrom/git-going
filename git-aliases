@@ -45,7 +45,7 @@ git config --global alias.d "diff --word-diff"
 
 echo "git ds ==> Diff Staged"
 git config --global --unset-all alias.ds
-git config --global alias.ds "diff --staged"
+git config --global alias.ds "diff --staged --word-diff"
 
 echo "git f ==> Fetch"
 git config --global --unset-all alias.f
