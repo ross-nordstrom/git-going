@@ -23,6 +23,9 @@ git config --global branch.autosetupmerge true
 echo -e "\nUse the new Git 2.0 default setting of simple push (safest for beginners)"
 git config --global push.default simple
 
+echo -e "\nUse a tab-width of 4 for git diff"
+git config --global core.pager "less -x4"
+
 echo -e "\ngit s ==> Status"
 git config --global --unset-all alias.s
 git config --global alias.s status
