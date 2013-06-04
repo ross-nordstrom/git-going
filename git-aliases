@@ -20,8 +20,12 @@ fi
 echo -e "\nTell git pull to automatically merge from the current branch"
 git config --global branch.autosetupmerge true
 
-echo -e "\nUse the new Git 2.0 default setting of simple push (safest for beginners)"
-git config --global push.default simple
+# Don't do this for now because it doesn't work with older versions of git
+#echo -e "\nUse the new Git 2.0 default setting of simple push (safest for beginners)"
+#git config --global push.default simple
+
+echo -e "\nSetup color syntax for git"
+git config --global color.ui true
 
 echo -e "\nUse a tab-width of 4 for git diff"
 git config --global core.pager "less -x4"
