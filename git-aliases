@@ -66,4 +66,8 @@ echo "git unstash ==> Unstash (git stash pop)"
 git config --global --unset-all alias.unstash
 git config --global alias.unstash "stash pop"
 
+echo "git ignore ==> Assume a file is unchanged"
+git config --global --unset-all alias.ignore
+git config --global alias.ignore "update-index --assume-unchanged"
+
 echo -e "\nAll done."
