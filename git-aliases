@@ -20,8 +20,15 @@ fi
 echo -e "\nTell git pull to automatically merge from the current branch"
 git config --global branch.autosetupmerge true
 
-echo -e "\nUse the new Git 2.0 default setting of simple push (safest for beginners)"
-git config --global push.default simple
+# Don't do this for now because it doesn't work with older versions of git
+#echo -e "\nUse the new Git 2.0 default setting of simple push (safest for beginners)"
+#git config --global push.default simple
+
+echo -e "\nSetup color syntax for git"
+git config --global color.ui true
+
+echo -e "\nUse a tab-width of 4 for git diff"
+git config --global core.pager "less -x4"
 
 echo -e "\ngit s ==> Status"
 git config --global --unset-all alias.s
@@ -41,11 +48,11 @@ git config --global alias.co checkout
 
 echo "git d ==> Diff"
 git config --global --unset-all alias.d
-git config --global alias.d diff
+git config --global alias.d "diff --word-diff"
 
 echo "git ds ==> Diff Staged"
 git config --global --unset-all alias.ds
-git config --global alias.ds "diff --staged"
+git config --global alias.ds "diff --staged --word-diff"
 
 echo "git f ==> Fetch"
 git config --global --unset-all alias.f
