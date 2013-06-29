@@ -70,4 +70,10 @@ echo "git ignore ==> Assume a file is unchanged"
 git config --global --unset-all alias.ignore
 git config --global alias.ignore "update-index --assume-unchanged"
 
+echo "git r/rebase ==> Pull and rebase"
+git config --global --unset-all alias.rebase
+git config --global --unset-all alias.r
+git config --global alias.r "pull --rebase"
+git config --global alias.rebase "pull --rebase"
+
 echo -e "\nAll done."
