@@ -24,7 +24,7 @@ git config --global branch.autosetupmerge true
 #echo -e "\nUse the new Git 2.0 default setting of simple push (safest for beginners)"
 #git config --global push.default simple
 
-echo -e "\nDefault editor is vim"
+echo -e "\nDefault git editor is vim"
 git config --global core.editor "vim"
 
 echo -e "\nSetup color syntax for git"
@@ -56,6 +56,10 @@ git config --global alias.d "diff --word-diff"
 echo "git ds ==> Diff Staged"
 git config --global --unset-all alias.ds
 git config --global alias.ds "diff --staged --word-diff"
+
+echo "git df ==> File diff"
+git config --global --unset-all alias.df
+git config --global alias.df "diff --name-only"
 
 echo "git f ==> Fetch"
 git config --global --unset-all alias.f
