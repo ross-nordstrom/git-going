@@ -45,6 +45,10 @@ echo "git ci ==> Commit"
 git config --global --unset-all alias.ci
 git config --global alias.ci commit
 
+echo -e "git undo ==> Undo last commit"
+git config --global --unset-all alias.undo
+git config --global alias.undo "reset --soft HEAD^"
+
 echo "git co ==> Checkout"
 git config --global --unset-all alias.co
 git config --global alias.co checkout
