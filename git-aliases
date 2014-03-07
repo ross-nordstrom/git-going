@@ -65,6 +65,10 @@ echo "git df ==> File diff"
 git config --global --unset-all alias.df
 git config --global alias.df "diff --name-only"
 
+echo "git dd ==> Diff stats"
+git config --global --unset-all alias.dd
+git config --global alias.dd "diff --stat"
+
 echo "git f ==> Fetch"
 git config --global --unset-all alias.f
 git config --global alias.f fetch
