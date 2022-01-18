@@ -20,6 +20,9 @@ fi
 echo -e "\nTell git pull to automatically merge from the current branch"
 git config --global branch.autosetupmerge true
 
+echo -e "\nTell git pull to rebase by default. (No one likes merge commits with yourself)"
+git config --global pull.rebase true
+
 # Don't do this for now because it doesn't work with older versions of git
 #echo -e "\nUse the new Git 2.0 default setting of simple push (safest for beginners)"
 #git config --global push.default simple
@@ -31,7 +34,7 @@ echo -e "\nSetup color syntax for git"
 git config --global color.ui true
 
 echo -e "\nUse a tab-width of 4 for git diff"
-git config --global core.pager "less -x4"
+git config --global core.pager "less -x4 -S"
 
 echo -e "\ngit s ==> Status"
 git config --global --unset-all alias.s
@@ -53,6 +56,10 @@ echo "git co ==> Checkout"
 git config --global --unset-all alias.co
 git config --global alias.co checkout
 
+echo "git a ==> Add"
+git config --global --unset-all alias.a
+git config --global alias.a "add"
+
 echo "git d ==> Diff"
 git config --global --unset-all alias.d
 git config --global alias.d "diff --word-diff"
@@ -71,7 +78,7 @@ git config --global alias.dd "diff --stat"
 
 echo "git f ==> Fetch"
 git config --global --unset-all alias.f
-git config --global alias.f fetch
+git config --global alias.f "fetch --tags --prune"
 
 echo "git p ==> Pull"
 git config --global --unset-all alias.p
@@ -79,7 +86,7 @@ git config --global alias.p pull
 
 echo "git lol ==> Better log"
 git config --global --unset-all alias.lol
-git config --global alias.lol "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short --all -10"
+git config --global alias.lol "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short --all -1000"
 
 echo "git unstash ==> Unstash (git stash pop)"
 git config --global --unset-all alias.unstash
@@ -94,5 +101,10 @@ git config --global --unset-all alias.rebase
 git config --global --unset-all alias.r
 git config --global alias.r "pull --rebase"
 git config --global alias.rebase "pull --rebase"
+
+echo "git rc ==> Rebase --continue"
+git config --global --unset-all alias.rc
+git config --global alias.rc "rebase --continue"
+
 
 echo -e "\nAll done."
