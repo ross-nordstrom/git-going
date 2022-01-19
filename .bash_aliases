@@ -17,5 +17,6 @@ alias myip='curl ipinfo.io/ip && echo ""'
 
 # Ross 1.5.22 - Easy branch cleanup
 # See: https://stackoverflow.com/a/32166469
-alias gbpurge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d'
+# NOTE: It uses `-d` to be safe.  If you're sure you want to delete the listed branches, do `gbpurge -D`
+alias gbpurge='git branch | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d $1'
 
